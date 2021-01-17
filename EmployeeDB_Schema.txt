@@ -5,8 +5,8 @@ dept_name varchar
 
 Dept_Emp
 -
-emp_no varchar pk fk 
-dept_no int fk -< Departments.dept_no
+emp_no int pk fk 
+dept_no varchar fk -< Departments.dept_no
 from_date date 
 to_date date
 
@@ -14,8 +14,8 @@ Dept_Manager
 -
 dept_no varchar pk fk - Departments.dept_no
 emp_no int pk fk - Employees.emp_no
-from_date data
-to_date data
+from_date date
+to_date date
 
 Employees
 -
@@ -35,7 +35,7 @@ to_date date
 
 Titles
 -
-emp_no varchar pk fk -< Employees.emp_no
-title int pk
+emp_no int pk fk -< Employees.emp_no
+title varchar pk
 from_date date pk
 to_date date
