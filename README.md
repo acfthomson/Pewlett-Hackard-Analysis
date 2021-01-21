@@ -24,7 +24,7 @@ Using queries and joins to create a list of retiring PH employees and employees 
 ![EmployeeDB](EmployeeDB.png)
 
 ###
-In order to determine the number of employees approaching retirement eligibility, a new table, [retirement_titles.csv]((https://github.com/acfthomson/Pewlett-Hackard-Analysis/tree/main/Data/retirement_titles.csv) was created by using the following query:
+In order to determine the number of employees approaching retirement eligibility, a new table, [retirement_titles.csv](https://github.com/acfthomson/Pewlett-Hackard-Analysis/tree/main/Data/retirement_titles.csv) was created by using the following query:
 ``` SQL
 SELECT e.emp_no,
 	   e.first_name,
@@ -65,7 +65,9 @@ GROUP BY title
 ORDER BY COUNT DESC;
 ```
 The retiring_titles table gave us the following data:
-![retiring_titles](retiring_titles.png)
+
+![retiring_titles](retiring_titles.PNG)
+
 
 ### Analysis
  - Within the [retirement_titles.csv](https://github.com/acfthomson/Pewlett-Hackard-Analysis/tree/main/Data), we are able to see how an employee has progressed through their career at PH.  Many have changed job titles at least once during their career.  This table allows us to see how long an employee was in each position they held, which could be used for further analysis in determinig average time in a position for certain career paths.
