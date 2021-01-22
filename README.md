@@ -109,3 +109,31 @@ We found that there are 1,549 employees eligible for PH's mentorship program.  T
 If all 1,549 employees participate and complete PH's mentorship program, this will account for filling only 1.7% of positions that will be vacated by retiring employees.  There is certainly enough retiring employees to assist in mentoring more junior employees for their positions.
 
 
+Additional tables that could be created and queries performed are as follows:
+In order to create a new table that shows the salaries of all retiring employees, the following query should be used:
+``` SQL
+SELECT ut.emp_no,
+	   ut.first_name,
+	   ut.last_name,
+	   ut.title,
+	   s.salary
+INTO retirement_salaries
+FROM unique_titles AS ut
+INNER JOIN salaries AS s
+ON (ut.emp_no = s.emp_no)
+ORDER BY ut.emp_no;
+```
+This will join unique_titles with the salaries table on the emp_id and output a new table that contains the same information as unique_titles with the addition of a "salary" column.  
+
+![retirement_salaries](retirement_salaries.PNG)
+
+See [retirement_salaries.csv](https://github.com/acfthomson/Pewlett-Hackard-Analysis/tree/main/Data) for the full listing of salaries for retiring employees.
+
+If PH is interested in the average salary of a retiring employee, the following query could be used:
+```SQL
+-- Get the average salary of a retiring employee
+SELECT AVG(salary)::numeric(10,2)
+FROM retirement_salaries;
+```
+
+The average salary of retiring PH employees is $52,909.18.
